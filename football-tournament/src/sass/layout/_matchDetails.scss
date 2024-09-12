@@ -1,0 +1,206 @@
+.match-details {
+  // background-color: $color-data-02;
+  background-color: $color-dark-01;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    background-color: $color-dark-01;
+
+    &-flag {
+      width: 20rem;
+      height: 20rem;
+      margin: 3rem auto;
+
+      &--img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        border: 2px solid $color-text-light;
+        border-radius: 50%;
+      }
+    }
+
+    &-manager {
+      font-weight: 300;
+      & strong {
+        margin-left: 1rem;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    &-player {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.5rem;
+      align-self: flex-start;
+
+      & p:nth-child(2) {
+        margin-right: auto;
+        text-align: left;
+      }
+    }
+
+    @include respond(tab-land) {
+      font-size: 1.4rem;
+
+      &-flag {
+        width: 12rem;
+        height: 12rem;
+        margin: 2rem auto;
+      }
+
+      &-manager {
+        font-size: 1.4rem;
+        overflow-wrap: break-word;
+        & span {
+          white-space: normal;
+          overflow-wrap: break-word;
+          font-size: 1rem;
+        }
+        // word-wrap: break-word;
+      }
+    }
+  }
+
+  &__details {
+    flex: 2;
+    height: 100%;
+  }
+
+  &__info {
+    background-color: $color-dark-01;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4rem 2rem;
+
+    @include respond(tab-land) {
+      padding: 2rem 1rem;
+    }
+
+    &-name {
+      font-size: 3.2rem;
+    }
+
+    &-score {
+      font-size: 5rem;
+      font-weight: 600;
+    }
+
+    &-delimiter {
+      font-size: 3rem;
+    }
+  }
+
+  &__field {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    // gap: 0.5rem;
+    &-container {
+      flex: 1 1 auto;
+      min-height: 0;
+      background-image: url('/src/assets/pitch-bg.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      // height: 100vh;-това работи
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    &-team {
+      width: 100%;
+      height: 100%;
+      max-width: 120rem;
+      border: 1px solid $color-text-light;
+      &-line {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 3rem;
+        margin: 20% auto;
+        // margin: 6rem auto;
+
+        &-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          // &-item--1,
+          // &-item--2 {
+          //   display: flex;
+          //   flex-direction: column;
+          //   justify-content: center;
+          //   align-items: center;
+
+          & p:last-child {
+            font-size: 0.8rem;
+          }
+        }
+
+        &-item--1 {
+          p:nth-child(1) {
+            padding: 0.4rem 1.3rem;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            border: 1px solid $color-text-light;
+            background-color: $color-dark-01;
+          }
+        }
+        &-item--2 {
+          p:nth-child(1) {
+            line-height: 2.1;
+            padding: 0 1.4rem;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            color: $color-dark-01;
+            border: 1px solid $color-dark-01;
+            background-color: $color-text-light;
+            // background-color: $color-data-04;
+          }
+        }
+      }
+
+      @include respond(tab-land) {
+        &-line {
+          gap: 0;
+          margin: 10% auto;
+        }
+      }
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      &-line {
+        gap: 0;
+        margin: 10% auto;
+      }
+    }
+  }
+}

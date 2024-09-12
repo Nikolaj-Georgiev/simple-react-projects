@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+// FONT FAMILIES
+$font-stack-main: 'Oswald', Helvetica, Arial, sans-serif;
+
+// COLORS
+$color-primary-01: #143cdb;
+$color-primary-02: #186cff;
+$color-primary-03: #002c92;
+$color-primary-04: #1f2369;
+$color-primary-05: #000d40;
+$color-secondary-01: #ff0000;
+$color-secondary-02: #ff6666;
+$color-secondary-03: #c80000;
+$color-secondary-04: #8c0000;
+$color-tertiary-01: #00ba5d;
+$color-tertiary-02: #33c87d;
+$color-tertiary-03: #009951;
+$color-tertiary-04: #007214;
+
+$color-text-light: #fff;
+$color-text-grey: #333;
+
+$color-data-01: #ff3b3b;
+$color-data-02: #204dff;
+$color-data-03: #00d66b;
+$color-data-04: #ffcb50;
+
+$color-dark-01: #202124;
+
+$shadow-dark: rgba(34, 66, 211, 0.35) 0px 5px 15px;
+$shadow-darker: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.2);
+
+$light-border: 1px solid rgba($color-text-light, 0.3);

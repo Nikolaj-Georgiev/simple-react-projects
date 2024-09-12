@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px; 9/16 == 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px; 8/16 == 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 30%; // 1rem = 8px; 8/16 == 50%;
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px; 12/16 == 75%;
+  }
+}
+
+body {
+  color: $color-text-light;
+  font-family: $font-stack-main;
+  font-weight: 400;
+  font-size: 1.8rem;
+  background-color: $color-primary-01;
+}
