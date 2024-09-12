@@ -1,8 +1,9 @@
 {
-  "name": "final-exam",
+  "name": "football-tournament",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Nikolay Georgiev",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
