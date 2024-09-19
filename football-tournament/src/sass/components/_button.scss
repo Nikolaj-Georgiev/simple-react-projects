@@ -8,6 +8,8 @@
   border-right: 1px solid transparent;
   transition: all 0.3s ease-in;
   border-radius: 5px;
+  // position: fixed;
+  // right: 25%;
 
   &:hover {
     border-bottom: 1px solid $color-text-light;

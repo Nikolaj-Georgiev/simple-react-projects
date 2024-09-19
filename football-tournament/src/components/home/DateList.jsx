@@ -14,13 +14,6 @@ export default function DateList({ stage, onSelectDate, onBack }) {
       </div>
 
       {Object.keys(stage.data).map((date) => (
-        // <div
-        //   className='date-list__item'
-        //   key={date}
-        //   onClick={() => onSelectDate(date)}
-        // >
-        //   <h3>{date}</h3>
-        // </div>
         <StageCard
           key={date}
           stageName={date}
