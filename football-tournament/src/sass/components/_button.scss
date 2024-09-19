@@ -1,0 +1,19 @@
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: $color-primary-05;
+  color: $color-text-light;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+  transition: all 0.3s ease-in;
+  border-radius: 5px;
+
+  &:hover {
+    border-bottom: 1px solid $color-text-light;
+    border-right: 1px solid $color-text-light;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+}
