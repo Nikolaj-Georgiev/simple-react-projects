@@ -1,3 +1,5 @@
+import StageCard from './StageCard';
+
 export default function DateList({ stage, onSelectDate, onBack }) {
   return (
     <div className='date-list'>
@@ -7,17 +9,23 @@ export default function DateList({ stage, onSelectDate, onBack }) {
           className='button'
           onClick={onBack}
         >
-          Back to Phases
+          Back to Stages
         </button>
       </div>
 
       {Object.keys(stage.data).map((date) => (
-        <div
+        // <div
+        //   className='date-list__item'
+        //   key={date}
+        //   onClick={() => onSelectDate(date)}
+        // >
+        //   <h3>{date}</h3>
+        // </div>
+        <StageCard
           key={date}
+          stageName={date}
           onClick={() => onSelectDate(date)}
-        >
-          <h3>{date}</h3>
-        </div>
+        />
       ))}
     </div>
   );

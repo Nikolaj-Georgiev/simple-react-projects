@@ -1,4 +1,10 @@
 .date-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
   &__header {
     width: 100%;
     border-bottom: 1px solid $color-text-light;
@@ -13,5 +19,7 @@
       line-height: 2;
       padding-bottom: 0.5rem;
     }
+  }
+  &__item {
   }
 }
