@@ -1,5 +1,19 @@
-.phase-card {
+.stage-card {
   width: fit-content;
   height: fit-content;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    animation: rotate 2s linear infinite;
+  }
 }

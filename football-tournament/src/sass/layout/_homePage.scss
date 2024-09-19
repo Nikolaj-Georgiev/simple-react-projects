@@ -49,6 +49,16 @@
     // flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
+
+    &-cards {
+      padding: 10rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      gap: 5rem;
+    }
   }
 
   &__list-item {

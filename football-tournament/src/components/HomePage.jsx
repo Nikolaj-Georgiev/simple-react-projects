@@ -9,9 +9,13 @@ import Match from './match/Match';
 import Loader from './Loader';
 import ErrorComponent from './ErrorComponent';
 import Stage from './home/Stage';
+import { useState } from 'react';
+import StageCard from './home/StageCard';
 
 export default function HomePage() {
   const { matchesData } = useData();
+  const [selectedPhase, setSelectedPhase] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   if (
     matchesData.loading ||
@@ -28,31 +32,37 @@ export default function HomePage() {
   const { groupPhase, roundOf16, quarterFinals, semiFinals, final } =
     divideMatchesByStage(ascendingSortedMatches, CUTOFF_DATE);
 
-  const groupedGroupPhaseMatches = getGroupedMatchesByDate(groupPhase);
-  const groupedRoundOf16Matches = getGroupedMatchesByDate(roundOf16);
-  const groupedQuarterFinalsMatches = getGroupedMatchesByDate(quarterFinals);
-  const groupedSemiFinalsMatches = getGroupedMatchesByDate(semiFinals);
-  const groupedFinalMatches = getGroupedMatchesByDate(final);
-
   const stages = [
-    { name: 'Group Phase', data: groupedGroupPhaseMatches },
-    { name: 'Round of 16', data: groupedRoundOf16Matches },
-    { name: 'Quarter Finals', data: groupedQuarterFinalsMatches },
-    { name: 'Semi Finals', data: groupedSemiFinalsMatches },
-    { name: 'Final', data: groupedFinalMatches },
+    { name: 'Group Phase', data: getGroupedMatchesByDate(groupPhase) },
+    { name: 'Round of 16', data: getGroupedMatchesByDate(roundOf16) },
+    { name: 'Quarter Finals', data: getGroupedMatchesByDate(quarterFinals) },
+    { name: 'Semi Finals', data: getGroupedMatchesByDate(semiFinals) },
+    { name: 'Final', data: getGroupedMatchesByDate(final) },
   ];
 
   return (
     <section className='home'>
       <h1 className='home__heading-primary'>Tournament Stages</h1>
 
-      {stages.map((phaseObj) => (
+      {!selectedPhase && (
+        <div className='home__phase-cards'>
+          {stages.map((stage) => (
+            <StageCard
+              key={stage.name}
+              stageName={stage.name}
+              onClick={() => setSelectedPhase(stage)}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* {stages.map((phaseObj) => (
         <Stage
           key={phaseObj.name}
           phase={phaseObj.name}
           data={phaseObj.data}
         />
-      ))}
+      ))} */}
     </section>
   );
 }
