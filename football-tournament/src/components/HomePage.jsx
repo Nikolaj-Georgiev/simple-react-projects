@@ -14,7 +14,7 @@ import StageCard from './home/StageCard';
 
 export default function HomePage() {
   const { matchesData } = useData();
-  const [selectedPhase, setSelectedPhase] = useState(null);
+  const [selectedStage, setSelectedStage] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
 
   if (
@@ -44,25 +44,25 @@ export default function HomePage() {
     <section className='home'>
       <h1 className='home__heading-primary'>Tournament Stages</h1>
 
-      {!selectedPhase && (
-        <div className='home__phase-cards'>
+      {!selectedStage && (
+        <div className='home__stage-cards'>
           {stages.map((stage) => (
             <StageCard
               key={stage.name}
               stageName={stage.name}
-              onClick={() => setSelectedPhase(stage)}
+              onClick={() => setSelectedStage(stage)}
             />
           ))}
         </div>
       )}
 
-      {/* {stages.map((phaseObj) => (
+      {stages.map((phaseObj) => (
         <Stage
           key={phaseObj.name}
-          phase={phaseObj.name}
+          stage={phaseObj.name}
           data={phaseObj.data}
         />
-      ))} */}
+      ))}
     </section>
   );
 }
