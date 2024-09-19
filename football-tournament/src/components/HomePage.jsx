@@ -5,12 +5,11 @@ import {
   getSortedMatchesByDate,
 } from '../utils/dataUtils';
 import { CUTOFF_DATE } from '../utils/config';
-import Match from './match/Match';
 import Loader from './Loader';
 import ErrorComponent from './ErrorComponent';
-import Stage from './home/Stage';
 import { useState } from 'react';
 import StageCard from './home/StageCard';
+import StageDetails from './home/StageDetails';
 
 export default function HomePage() {
   const { matchesData } = useData();
@@ -56,13 +55,14 @@ export default function HomePage() {
         </div>
       )}
 
-      {stages.map((phaseObj) => (
-        <Stage
-          key={phaseObj.name}
-          stage={phaseObj.name}
-          data={phaseObj.data}
+      {selectedStage && (
+        <StageDetails
+          stage={selectedStage}
+          onBack={() => setSelectedStage(null)}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
         />
-      ))}
+      )}
     </section>
   );
 }
