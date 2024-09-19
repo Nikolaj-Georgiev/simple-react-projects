@@ -8,7 +8,7 @@ import { CUTOFF_DATE } from '../utils/config';
 import Match from './match/Match';
 import Loader from './Loader';
 import ErrorComponent from './ErrorComponent';
-import Phase from './home/Phase';
+import Stage from './home/Stage';
 
 export default function HomePage() {
   const { matchesData } = useData();
@@ -34,7 +34,7 @@ export default function HomePage() {
   const groupedSemiFinalsMatches = getGroupedMatchesByDate(semiFinals);
   const groupedFinalMatches = getGroupedMatchesByDate(final);
 
-  const phases = [
+  const stages = [
     { name: 'Group Phase', data: groupedGroupPhaseMatches },
     { name: 'Round of 16', data: groupedRoundOf16Matches },
     { name: 'Quarter Finals', data: groupedQuarterFinalsMatches },
@@ -46,8 +46,8 @@ export default function HomePage() {
     <section className='home'>
       <h1 className='home__heading-primary'>Tournament Stages</h1>
 
-      {phases.map((phaseObj) => (
-        <Phase
+      {stages.map((phaseObj) => (
+        <Stage
           key={phaseObj.name}
           phase={phaseObj.name}
           data={phaseObj.data}
