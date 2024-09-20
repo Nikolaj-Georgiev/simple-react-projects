@@ -6,7 +6,6 @@ import {
   getMatchDetailsById,
   getTeamFieldSchemaByTeamName,
 } from '../../utils/dataUtils';
-import Error from '../ErrorComponent';
 import Player from '../players/Player';
 import { FIELD_SCHEMA, POSITIONS } from '../../utils/config';
 import useTeamFieldSchema from '../../hooks/useTeamFieldSchema';
