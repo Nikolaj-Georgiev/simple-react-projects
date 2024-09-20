@@ -13,4 +13,10 @@
     align-items: center;
     padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   }
+
+  &__matches {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+  }
 }
