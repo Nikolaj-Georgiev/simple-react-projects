@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const pages = [
@@ -9,9 +9,17 @@ export default function Header() {
     // { title: 'Players', path: '/players' },
   ];
 
+  const navigate = useNavigate();
+
+  function handleLogoClick() {
+    navigate('/');
+  }
   return (
     <header className='header'>
-      <div className='header__logo-container'>
+      <div
+        className='header__logo-container'
+        onClick={handleLogoClick}
+      >
         <img
           className='header__logo-container--img'
           src='/goal_icon.ico'
