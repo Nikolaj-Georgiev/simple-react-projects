@@ -22,7 +22,6 @@ export default function BracketPhase({ phase, phaseName, cssId }) {
                 coordinates={SPECIAL_DATES[date] || COORDINATES[0]}
               />
             )}
-          {}
           {matches.map((match) => (
             <BracketMatch
               key={match.id}

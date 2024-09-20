@@ -68,7 +68,7 @@
     }
     &--4 {
       align-self: baseline;
-      gap: 55rem;
+      gap: 50rem;
 
       & h4 {
         padding-bottom: 1rem;
@@ -147,6 +147,10 @@
     z-index: 100;
 
     @include respond(tab-land) {
+      opacity: 0;
+    }
+
+    @include respond(big-desktop) {
       opacity: 0;
     }
   }
