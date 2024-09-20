@@ -72,7 +72,7 @@ git clone https://github.com/Nikolaj-Georgiev/simple-react-projects.git
 2.**Navigate into the project subfolder**:
 
 ```bash
-cd SirmaAcademyJS/football-tournament
+cd football-tournament
 ```
 
 3.**Install dependencies**:
