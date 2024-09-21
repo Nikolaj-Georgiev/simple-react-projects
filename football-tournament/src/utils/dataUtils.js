@@ -78,7 +78,7 @@ export function getGroupedMatchesByDate(matches) {
     return groupedMatches;
   }, {});
 }
-
+// this function expects to receive matches sorted by date
 export function divideMatchesByStage(matches, cutOffDate) {
   const stages = {
     groupPhase: [],
