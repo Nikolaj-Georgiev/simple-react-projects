@@ -2,64 +2,49 @@
 
 ## Description
 
-WEB application that visualizes the matches and results
-from the European Football Championship.
+A web application that visualizes the matches and results from the European Football Championship. This project demonstrates skills in React development, data manipulation, and responsive design.
 
-## Input data
+## Features
 
-A CSV files with data in the following format:
+- Tournament stages visualization
+- Match details with team formations
+- Team details with player rosters
+- Bracket view for final stages
+- Responsive design for various screen sizes
 
-### players.csv
+## Technologies Used
 
-`ID`, `TeamNumber`, `Position`, `FullName`, `TeamID`  
-1, 1, GK, Manuel Neuer, 1  
-2, 2, DF, Antonio Rüdiger, 1  
-...
+- React
+- React Router for navigation
+- CSS for styling with SCSS
+- Jest and React Testing Library for testing
 
-### teams.csv
+## Input Data
 
-`ID`, `Name`, `ManagerFullName`, `Group`  
-1, Germany, Julian Nagelsmann, A  
-2, Scotland, Steve Clarke, A  
-...
+The application uses CSV files for data input:
 
-### matches.csv
-
-`ID`, `ATeamID`, `BTeamID`, `Date`, `Score`  
-1, 1, 2, 6/14/2024, 5-1  
-2, 3, 4, 6/15/2024, 1-3  
-...
-
-### records.csv
-
-`ID`, `PlayerID`, `MatchID`, `fromMinutes`, `toMinutes`  
-1, 1, 1, 0, NULL  
-2, 2, 1, 0, 90  
-...
+- `players.csv`: Player information
+- `teams.csv`: Team information
+- `matches.csv`: Match details
+- `records.csv`: Player participation records
 
 ## Project Architecture
 
-The project is structured as follows:
+- **App**: Main component managing routing
+- **HomePage**: Visualizes tournament stages and matches
+- **MatchDetails**: Displays match details, formations, and results
+- **TeamDetails**: Shows team information and player roster
+- **Bracket**: Displays bracket view of final tournament stages
 
-- **App**: The main component that manages the routing of the application.
-- **Home**: The component that visualizes the tournament stages and all matches. Click on any match lead to Match Details page.
-- **MatchDetails**: The component for match details, displaying formations and results.
-- **TeamDetails**: The component for team details, including a roster of all players.
-- **Bracket**: A component displaying bracket view of the final four stages of the tournament
+## Implementation Highlights
 
-## Implementation Algorithm
+- CSV parsing using JavaScript's `fetch` function
+- Match sorting and tournament bracket organization
+- Responsive React components for visualization
 
-### Loading CSV Files
+## Testing
 
-CSV files are loaded using JavaScript's `fetch` function and are manually parsed into appropriate objects.
-
-### Match Sorting
-
-Matches are sorted by date. The tournament bracket is organized by stages (round of 16, quarter final, etc.).
-
-### Visualization
-
-React is used to create components that visualize different aspects of the tournament. The structure is designed to be responsive and easy to use.
+The project includes unit and integration tests for key components and functions using Jest and React Testing Library. While not exhaustive, these tests cover critical functionality and demonstrate testing practices in React applications.
 
 ### Installation
 
@@ -87,9 +72,21 @@ npm install
 npm run dev
 ```
 
-5.**This will start the project on localhost**
+5.**Open http://localhost:5173 in your browser**
+
+### Running Tests
+
+**to run the test suits:**
+
+```bash
+npm test
+```
 
 ### Deployment
 
-**You can access the deployed project at**:
-[text](https://ng-football.netlify.app/)https://ng-football.netlify.app/
+**The project is deployed and can be accessed at:**
+[text](https://ng-football-tournament-v2.netlify.app/)https://ng-football-tournament-v2.netlify.app/
+
+### License
+
+**This project is MIT licensed**
