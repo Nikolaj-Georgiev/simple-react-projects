@@ -1,4 +1,4 @@
-import { divideMatchesByStage, getSortedMatchesByDate, getTeamById } from './dataUtils';
+import { divideMatchesByStage, getMatchDetailsById, getSortedMatchesByDate, getTeamById } from './dataUtils';
 
 describe('divideMatchesByStage', () => {
   const matches = [
@@ -66,5 +66,67 @@ describe('getTeamById', () => {
 
   it('returns undefined for unknown id', () => {
     expect(getTeamById(teams, '3')).toBeUndefined();
+  });
+});
+
+describe('getMatchDetailsById', () => {
+  const matches = [
+    { id: 1, ateamid: 1, bteamid: 2, date: '2024-06-14', score: '2-1' }
+  ];
+  const teams = [
+    { id: 1, name: 'Team A', managerfullname: 'Manager A' },
+    { id: 2, name: 'Team B', managerfullname: 'Manager B' }
+  ];
+  const players = [
+    { id: 1, name: 'Player A1', teamid: 1 },
+    { id: 2, name: 'Player A2', teamid: 1 },
+    { id: 3, name: 'Player B1', teamid: 2 },
+    { id: 4, name: 'Player B2', teamid: 2 }
+  ];
+  const recordsIndexObj = {
+    1: [
+      { playerid: 1, fromminutes: '0', tominutes: '45' },
+      { playerid: 2, fromminutes: '46', tominutes: '90' },
+      { playerid: 3, fromminutes: '0', tominutes: '90' }
+    ]
+  };
+  const flagsUrl = {
+    'Team A': 'url_to_team_a_flag',
+    'Team B': 'url_to_team_b_flag'
+  };
+
+  it('should return match details with correct data', () => {
+    const result = getMatchDetailsById(1, matches, teams, players, recordsIndexObj, flagsUrl);
+
+    expect(result).toEqual({
+      matchId: 1,
+      date: '2024-06-14',
+      score: '2-1',
+      teamA: {
+        name: 'Team A',
+        manager: 'Manager A',
+        flag: 'url_to_team_a_flag',
+        teamScore: '2',
+        players: [
+          { id: 1, name: 'Player A1', playingTime: [{ fromminutes: '0', tominutes: '45' }], teamid: 1 },
+          { id: 2, name: 'Player A2', playingTime: [{ fromminutes: '46', tominutes: '90' }], teamid: 1 }
+        ]
+      },
+      teamB: {
+        name: 'Team B',
+        manager: 'Manager B',
+        flag: 'url_to_team_b_flag',
+        teamScore: '1',
+        players: [
+          { id: 3, name: 'Player B1', playingTime: [{ fromminutes: '0', tominutes: '90' }], teamid: 2 },
+          { id: 4, name: 'Player B2', playingTime: [], teamid: 2 }
+        ]
+      }
+    });
+  });
+
+  it('should return null if match is not found', () => {
+    const result = getMatchDetailsById(999, matches, teams, players, recordsIndexObj, flagsUrl);
+    expect(result).toBeNull();
   });
 });
