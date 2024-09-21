@@ -54,25 +54,25 @@ The project includes unit and integration tests for key components and functions
 git clone https://github.com/Nikolaj-Georgiev/simple-react-projects.git
 ```
 
-2.**Navigate into the project subfolder**:
+2. **Navigate into the project subfolder**:
 
 ```bash
 cd football-tournament
 ```
 
-3.**Install dependencies**:
+3. **Install dependencies**:
 
 ```bash
 npm install
 ```
 
-4.**Run the development server**:
+4. **Run the development server**:
 
 ```bash
 npm run dev
 ```
 
-5.**Open http://localhost:5173 in your browser**
+5. **Open http://localhost:5173 in your browser**
 
 ### Running Tests
 
@@ -85,7 +85,7 @@ npm test
 ### Deployment
 
 **The project is deployed and can be accessed at:**
-[text](https://ng-football-tournament-v2.netlify.app/)https://ng-football-tournament-v2.netlify.app/
+[text](https://ng-football-tournament-v2.netlify.app/) https://ng-football-tournament-v2.netlify.app/
 
 ### License
 
