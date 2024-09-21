@@ -85,7 +85,7 @@ npm test
 ### Deployment
 
 **The project is deployed and can be accessed at:**
-[text](https://ng-football-tournament-v2.netlify.app/) https://ng-football-tournament-v2.netlify.app/
+[football-tournament](https://ng-football-tournament-v2.netlify.app/)
 
 ### License
 
