@@ -16,7 +16,7 @@ A classic Tic-Tac-Toe game implemented with React and TypeScript, showcasing ess
 
 - **React** – For building the user interface
 - **TypeScript** – For type-safe JavaScript
-- **CSS/SCSS** – For styling and layout
+- **CSS** – For styling and layout
 - **Vite** – For fast development setup and bundling
 
 ## Project Architecture
