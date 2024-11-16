@@ -48,7 +48,7 @@ label {
 }
 
 input {
-  width: 10rem;
+  width: 12rem;
   height: 4rem;
   background-color: #12522e;
   border: none;
@@ -66,12 +66,12 @@ input:focus {
 }
 
 select {
-  width: 10rem;
+  width: 12rem;
   height: 4rem;
   background-color: #12522e;
   border: none;
   color: #f6f6f6;
-  padding: 0.3rem;
+  padding: 0.5rem;
   border-radius: 0.9rem;
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
