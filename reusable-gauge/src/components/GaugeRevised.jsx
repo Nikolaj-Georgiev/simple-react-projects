@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import classes from './GaugeRevised.module.css';
 
@@ -33,18 +33,53 @@ const masterSizesData = [
 
 export default function GaugeRevised({ value, size }) {
   const [indexValue, setIndexValue] = useState(0);
+  const [isTouching, setIsTouching] = useState(false);
+  const gaugeRef = useRef(null);
 
   useEffect(() => {
-    const checkedValue = validateIndex(value);
-    if (checkedValue || checkedValue === 0) {
-      setIndexValue(checkedValue);
+    if (!isTouching) {
+      const checkedValue = validateIndex(value);
+      if (checkedValue !== null && checkedValue !== indexValue) {
+        setIndexValue(checkedValue);
+      }
     }
+  }, [value, isTouching]);
+
+  // changing style according to the current index value
+  useEffect(() => {
     updateStyles(indexValue, size);
-  }, [size, value, indexValue]);
+  }, [indexValue, size]);
+
+  const handleTouchMove = (e) => {
+    e.preventDefault();
+    if (e.touches && e.touches.length > 0 && gaugeRef.current) {
+      const touch = e.touches[0];
+      const gaugeElement = gaugeRef.current.getBoundingClientRect();
+      const touchPosition = touch.clientX - gaugeElement.left;
+      const gaugeWidth = gaugeElement.width;
+
+      // transforming the touch position in a number between 0 and 10
+      const newIndex = Math.min(
+        10,
+        Math.max(0, Math.floor((touchPosition / gaugeWidth) * 11))
+      );
+      setIndexValue(newIndex);
+    }
+  };
+
+  const handleTouchStart = (e) => {
+    e.preventDefault();
+    handleTouchMove(e); // handling initial touch
+  };
 
   return (
     <>
-      <div className={classes.container}>
+      <div
+        className={classes.container}
+        ref={gaugeRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+      >
         <div className={classes['center-content']}>
           <p>{indexValue}</p>
         </div>
