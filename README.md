@@ -25,7 +25,7 @@ A classic Tic-Tac-Toe game implemented with React and TypeScript, showcasing ess
   - Game status display and win detection
   - Option to reset the game
   - Responsive design for various screen sizes
-- **Technologies Used**: React, TypeScript, CSS/SCSS, Vite
+- **Technologies Used**: React, TypeScript, CSS, Vite
 - **[Live Demo](https://tic-tac-toe-v2-nikolaj-georgiev.netlify.app/)**
 
 ### 3. [Gauge Component with Touch Interaction](./reusable-gauge/README.md)
