@@ -43,28 +43,33 @@ form {
 label {
   color: #11c762;
   font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
   padding: 0.4rem;
 }
 
 input {
-  width: 8rem;
-  height: 2.4rem;
+  width: 10rem;
+  height: 4rem;
   background-color: #12522e;
   border: none;
   color: #f6f6f6;
   padding: 0.5rem;
   border-radius: 0.9rem;
   text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
 }
 
 select {
-  width: 8rem;
-  height: 2.4rem;
+  width: 10rem;
+  height: 4rem;
   background-color: #12522e;
   border: none;
   color: #f6f6f6;
   padding: 0.3rem;
   border-radius: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
 }
 
 button {
