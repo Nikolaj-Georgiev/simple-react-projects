@@ -1,8 +1,11 @@
-# React + Vite
+### 4. [Facts Sharing App](./facts-app/README.md)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A facts-sharing app implemented using React, designed to allow users to share interesting facts and vote on their accuracy. This project makes use of a flexible architecture that incorporates Supabase as the backend and database, demonstrating CRUD operations and state management with reusable components. The application also features a responsive design for enhanced user experience on different devices.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Features**:
+  - Fact submission with validation for correctness before adding to the database
+  - Category filtering to easily navigate and display specific types of facts
+  - Voting system to mark facts as interesting, mind-blowing, or false
+  - Responsive design for desktop and mobile compatibility
+- **Technologies Used**: React, CSS, Vite, Supabase
+- **[Live Demo](https://facts-gnikolay.netlify.app)**
