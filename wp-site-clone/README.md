@@ -14,7 +14,7 @@ This repository contains a modern single-page application (SPA) clone of the rea
 
 ## Demo
 
-You can see the live demo of the Fluidtrol clone [here](https://fluidtrol-clone.netlify.app/).
+You can see the live demo of the Clonetrol clone [here](https://fluidtrol-clone.netlify.app/).
 
 ## Features
 
