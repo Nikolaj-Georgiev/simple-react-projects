@@ -1,6 +1,6 @@
-# Fluidtrol Website Clone
+# Real world Website Clone
 
-This repository contains a modern single-page application (SPA) clone of the Fluidtrol website, developed using **React**, **Chakra UI**, and **Vite**. This project showcases a responsive, accessible design, incorporating reusable components, CSS styling, and features to create a user-friendly interface similar to the original website.
+This repository contains a modern single-page application (SPA) clone of the Real-world WP website, developed using **React**, **Chakra UI**, and **Vite**. This project showcases a responsive, accessible design, incorporating reusable components, CSS styling, and features to create a user-friendly interface similar to the original website.
 
 ## Table of Contents
 
@@ -38,7 +38,7 @@ Follow these steps to get a local copy up and running:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/Nikolaj-Georgiev/fluidtrol-clone.git
+   git clone https://github.com/Nikolaj-Georgiev/wp-site-clone.git
    cd fluidtrol-clone
    ```
 
@@ -65,7 +65,7 @@ Follow these steps to get a local copy up and running:
 ## Folder Structure
 
 ```
-fluidtrol-clone/
+wp-site-clone/
   ├── src/
   │   ├── assets/                # Images and other static files
   │   ├── components/            # Reusable components (Header, MenuCollapse, MainNav, etc.)
