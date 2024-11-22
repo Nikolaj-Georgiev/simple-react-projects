@@ -1,4 +1,4 @@
-# Real world Website Clone
+# WP made Website Clone
 
 This repository contains a modern single-page application (SPA) clone of the Real-world WP website, developed using **React**, **Chakra UI**, and **Vite**. This project showcases a responsive, accessible design, incorporating reusable components, CSS styling, and features to create a user-friendly interface similar to the original website.
 
