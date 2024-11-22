@@ -14,7 +14,7 @@ This repository contains a modern single-page application (SPA) clone of the rea
 
 ## Demo
 
-You can see the live demo of the Clonetrol clone [here](https://fluidtrol-clone.netlify.app/).
+You can see the live demo of the Clonetrol clone [here](https://clonetrol.netlify.app/).
 
 ## Features
 
@@ -38,8 +38,8 @@ Follow these steps to get a local copy up and running:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/Nikolaj-Georgiev/wp-site-clone.git
-   cd fluidtrol-clone
+   git clone https://github.com/Nikolaj-Georgiev/simple-react-projects.git
+   cd wp-site-clone
    ```
 
 2. **Install Dependencies**:
