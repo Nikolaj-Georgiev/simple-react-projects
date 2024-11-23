@@ -30,7 +30,7 @@ const About = () => {
         mt={10}
         pl={6}
       >
-        Why Trust Clonetrol?
+        Why Trust Clonetroll?
       </Heading>
       <Flex
         direction={{ base: 'column', tablet: 'row' }}

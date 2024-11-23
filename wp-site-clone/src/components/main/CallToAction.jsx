@@ -20,7 +20,7 @@ const CallToAction = () => {
         fontSize='48px'
         fontWeight='bold'
       >
-        Shop Clonetrol
+        Shop Clonetroll
       </Heading>
       <CustomButton
         children='View All Products'

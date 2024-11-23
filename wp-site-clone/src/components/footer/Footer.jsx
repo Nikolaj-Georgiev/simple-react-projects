@@ -37,7 +37,8 @@ const Footer = () => {
           textAlign={useBreakpointValue({ sm: 'center', tablet: 'left' })}
           p={2}
         >
-          &copy; 2024 Clonetrol Pro :) Technologies, Inc. All Rights Reserved
+          &copy; 2024 Clonetroll Pro Clone Technologies, Inc. All Rights
+          Reserved. Project made with learning purpose
         </Text>
       </Box>
       <VStack
@@ -75,7 +76,7 @@ const Footer = () => {
             fontSize={{ sm: 'xs', md: 'sm', lg: 'md', xl: 'lg' }}
             letterSpacing='0.52px'
           >
-            or send an email to:ng@clonetrol.com
+            or send an email to:ng@clonetroll.com
           </Text>
         </Box>
       </VStack>
