@@ -14,7 +14,7 @@ This repository contains a modern single-page application (SPA) clone of the rea
 
 ## Demo
 
-You can see the live demo of the Clonetrol clone [here](https://clonetrol.netlify.app/).
+You can see the live demo of the Clonetroll clone [here](https://clonetroll.netlify.app/).
 
 ## Features
 
