@@ -51,6 +51,19 @@ A facts-sharing app implemented using React, designed to allow users to share in
   - Responsive design for desktop and mobile compatibility
 - **Technologies Used**: React, CSS, Vite, Supabase
 - **[Live Demo](https://your-deployment-link.com)**
+  
+### 5. [WP site clone](./wp-site-clone/README.md)
+
+Modern single-page application (SPA) clone of the real-world WP made website, developed using **React**, **Chakra UI**, and **Vite**. This project showcases a responsive, accessible design, incorporating reusable components, CSS styling, and features to create a user-friendly interface similar to the original website.
+
+- **Features**:
+  - **Responsive Design**: The application is fully responsive, adapting to different screen sizes including desktops, tablets, and mobile devices.
+  - **Chakra UI Integration**: The UI is styled using Chakra UI to ensure consistency and ease of development.
+  - **Accordion Menu for Mobile**: The navigation menu transforms into an accordion for mobile screens, providing an optimal user experience.
+  - **Sticky Header**: The header stays sticky on top for easy navigation access.
+  - **Search Functionality**: A functional search bar that adjusts its position responsively.
+- **Technologies Used**: React, CSS, JavaScript (ES6), Vite, Chakra UI
+- **[Live Demo](https://clonetroll.netlify.app/)**
 
 
 
