@@ -50,7 +50,7 @@ A facts-sharing app implemented using React, designed to allow users to share in
   - Voting system to mark facts as interesting, mind-blowing, or false
   - Responsive design for desktop and mobile compatibility
 - **Technologies Used**: React, CSS, Vite, Supabase
-- **[Live Demo](https://your-deployment-link.com)**
+- **[Live Demo](https://facts-gnikolay.netlify.app/)**
   
 ### 5. [WP site clone](./wp-site-clone/README.md)
 
