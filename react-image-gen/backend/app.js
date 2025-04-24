@@ -1,6 +1,5 @@
 import express from 'express';
-import jwt from 'jsonwebtoken';
-import { createUser, login } from './middleware/auth';
+import { createUser, login } from './middleware/auth.js';
 
 const app = express();
 app.use(express.json());
@@ -18,10 +17,12 @@ app.post('/signup', async (req, res) => {
       return res.status(400).send({ error: 'Invalid email or password' });
     }
 
-    createUser(email, password);
-    res.status(201).send({ message: 'User created successfully' });
+    const token = createUser(email, password);
+    res.status(201).send({ message: 'User created successfully', token });
   } catch (error) {
-    res.status(400).send({ error: 'Email already in use' });
+    res
+      .status(400)
+      .send({ error: 'Creating user failed, invalid credentials' });
   }
 });
 

@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "dev": "node --watch app.js"
+    "dev": "node --watch --env-file=.env app.js",
+    "start": "node --env-file=.env app.js"
   },
   "keywords": [],
   "author": "",
