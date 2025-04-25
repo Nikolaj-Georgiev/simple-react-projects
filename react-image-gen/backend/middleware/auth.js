@@ -20,29 +20,18 @@ export function createUser(email, password) {
   const token = jwt.sign({ userId: result.lastInsertRowid }, secretKey, {
     expiresIn: "1h",
   });
-  // jwt.sign(
-  //   { userId: result.lastInsertRowid },
-  //   secretKey,
-  //   { expiresIn: '1h' },
-  //   (err, token) => {
-  //     if (err) {
-  //       throw new Error('Token generation failed');
-  //     }
-  //     return token;
-  //   });
-
   return token;
 }
 
-export function login(email, password) {}
+export function login(email, password) {
+  const user = db.prepare("SELECT * FROM users WHERE email = ?").get(email);
 
-// export const auth = (req, res, next) => {
-//   try {
-//     const token = req.header('Authorization').replace('Bearer ', '');
-//     const decoded = jwt.verify(token, JWT_SECRET);
-//     req.userId = decoded.userId;
-//     next();
-//   } catch (error) {
-//     res.status(401).json({ error: 'Please authenticate' });
-//   }
-// };
+  if (!user || !bcrypt.compareSync(password, user.password)) {
+    const error = new Error("Invalid email or password");
+    error.statusCode = 400;
+    throw error;
+  }
+
+  const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: "1h" });
+  return token;
+}
