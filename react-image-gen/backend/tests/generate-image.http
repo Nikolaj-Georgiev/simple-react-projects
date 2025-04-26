@@ -1,8 +1,10 @@
 POST http://localhost:5000/generate-image HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NTY5MzAyMiwiZXhwIjoxNzQ1Njk2NjIyfQ.13nmJdDVcZlUdGAC3ypsAzVbjqqudVUQHEoRG7I8Ru8
 
 {
-  "prompt": "Eye looking at the viewer, hyper-realistic, 8k, detailed, cinematic lighting, photorealistic, sharp focus",
+  "prompt": "Volvo XC60 D5 AWD 2009 color bordo with northwave box on top, sunset on a mountain road,award winning, photography, 8k",
+  "negative_prompt": "ugly, deformed, blurry, bad anatomy, extra limbs, disfigured, out of frame, mutation, mutated, extra limbs, ugly, poorly drawn hands, poorly drawn face, out of frame, mutation, mutated, poorly drawn text, poorly written words, blurry, watermark, grainy, duplicate",
   "options":{
     "format": "png"
   }

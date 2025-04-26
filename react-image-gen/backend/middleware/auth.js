@@ -35,3 +35,18 @@ export function login(email, password) {
   const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: "1h" });
   return token;
 }
+
+export function enforceAuth(req, res, next) {
+  const token = req.headers["authorization"]?.split(" ")[1]; //Bearer token
+
+  if (!token) {
+    return res.status(401).send({ error: "Unauthorized" });
+  }
+
+  try {
+    jwt.verify(token, secretKey);
+    next();
+  } catch (error) {
+    return res.status(401).send({ error: "Unauthorized" });
+  }
+}

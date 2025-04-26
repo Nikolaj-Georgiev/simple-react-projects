@@ -18,9 +18,16 @@ export async function generateImage(prompt, options) {
     input,
   });
 
-  // To access the file URL:
-  console.log(output); //=> "http://example.com"
+  const imageBlob = await output.blob();
+  const imageBuffer = await imageBlob.arrayBuffer();
+  const image = Buffer.from(imageBuffer);
 
-  // To write the file to disk:
-  // fs.writeFile("my-image.png", output);
+  return { image, format: imageBlob.type };
 }
+// const output = await replicate.run("black-forest-labs/flux-schnell", {
+//   input,
+// }); // tested model, but not used in the app
+// const outputStream = output[0];
+// To write the file to disk:
+// import { writeFile } from "node:fs/promises";
+// fs.writeFile("my-image.png", output);
