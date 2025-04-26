@@ -1,5 +1,6 @@
 import express from "express";
 import { createUser, login } from "./middleware/auth.js";
+import { generateImage } from "./image.js";
 
 const app = express();
 app.use(express.json());
@@ -40,6 +41,13 @@ app.post("/login", async (req, res) => {
       .status(500)
       .json({ error: "Login failed, please check your credentials" });
   }
+});
+
+app.post("/generate-image", async (req, res) => {
+  const { prompt, options } = req.body; // options => aspect_ratio, format, quality
+
+  await generateImage(prompt, options);
+  res.status(201).send({ message: "Image generated successfully" });
 });
 
 const port = process.env.PORT || 5000;

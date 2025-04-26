@@ -1,0 +1,10 @@
+POST http://localhost:5000/generate-image HTTP/1.1
+content-type: application/json
+
+{
+  "prompt": "Eye looking at the viewer, hyper-realistic, 8k, detailed, cinematic lighting, photorealistic, sharp focus",
+  "options":{
+    "format": "png"
+  }
+  
+}
