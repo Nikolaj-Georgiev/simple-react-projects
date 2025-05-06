@@ -26,7 +26,9 @@ function AuthForm() {
     }
     try {
       if (authMode === "signup") {
-        authCtx.signup(email, password);
+        await authCtx.signup(email, password);
+      } else {
+        await authCtx.login(email, password);
       }
     } catch (error) {
       setError(error.message);
@@ -38,14 +40,14 @@ function AuthForm() {
   return (
     <Form action={action} className="max-w-[25rem] mx-auto">
       <InputContainer>
-        <Label htmlFor="email">Email:</Label>
+        <Label htmlFor="email">Email</Label>
         <Input type="email" id="email" name="email" required />
       </InputContainer>
       <InputContainer>
-        <Label htmlFor="password">Password:</Label>
+        <Label htmlFor="password">Password</Label>
         <Input type="password" id="password" name="password" required />
       </InputContainer>
-      <InputContainer className={"honeypot"}>
+      <InputContainer className={"honeypot"} name="honeypot">
         <Label htmlFor="honeypot" className={"honeypot"}>
           honeypot
         </Label>
