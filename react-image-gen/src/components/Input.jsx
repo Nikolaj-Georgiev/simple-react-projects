@@ -1,6 +1,7 @@
 import { twMerge } from "tailwind-merge";
 
 function Input({ isTextArea, className, ...props }) {
+  className = className === "honeypot" ? "hidden" : className;
   const Component = isTextArea ? "textarea" : "input";
   return (
     <Component

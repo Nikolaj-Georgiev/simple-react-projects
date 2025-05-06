@@ -1,6 +1,7 @@
 import { twMerge } from "tailwind-merge";
 
 function Label({ htmlFor, className, children }) {
+  className = className === "honeypot" ? "hidden" : className;
   return (
     <label
       htmlFor={htmlFor}
