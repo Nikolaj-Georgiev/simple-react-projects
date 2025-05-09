@@ -6,7 +6,7 @@ import Label from "./Label";
 import { useAuthContext } from "../store/auth-context";
 
 async function sendImageRequest(prompt, options, authToken) {
-  const response = await fetch("http://localhost:5000/generate-image", {
+  const response = await fetch("http://localhost:5000/images/generate-image", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

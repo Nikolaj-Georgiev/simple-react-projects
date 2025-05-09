@@ -1,8 +1,8 @@
-import sqldb from 'better-sqlite3';
+import sqldb from "better-sqlite3";
 
-const db = sqldb('app.db');
+const db = sqldb("app.db");
 
-db.pragma('journal_mode = WAL');
+db.pragma("journal_mode = WAL");
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users ( 
@@ -10,6 +10,6 @@ db.exec(`
     email TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL
   );  
-  `);
+`);
 
 export default db;
