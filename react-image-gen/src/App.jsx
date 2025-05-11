@@ -1,10 +1,11 @@
-import AuthForm from "./components/AuthForm";
-import Header from "./components/Header";
-import ImageGeneration from "./components/ImageGeneration";
-import { useAuthContext } from "./store/auth-context";
+import { useAuthContext } from "./store/auth/authContext";
+import Header from "./components/layout/Header";
+import AuthForm from "./components/features/auth/AuthForm";
+import ImageGeneration from "./components/features/imageGeneration/ImageGeneration";
 
 function App() {
   const { token } = useAuthContext();
+
   return (
     <div className="bg-stone-800 min-h-screen py-8">
       <Header />

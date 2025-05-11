@@ -8,7 +8,8 @@ db.exec(`
   CREATE TABLE IF NOT EXISTS users ( 
     id INTEGER PRIMARY KEY,
     email TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL
+    password TEXT NOT NULL,
+    image_count INTEGER DEFAULT 0
   );  
 `);
 

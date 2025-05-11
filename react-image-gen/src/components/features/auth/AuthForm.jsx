@@ -1,9 +1,11 @@
+// /components/features/auth/AuthForm.jsx
 import { useActionState, useState } from "react";
-import Form from "./Form";
-import InputContainer from "./InputContainer";
-import Label from "./Label";
-import Input from "./Input";
-import { useAuthContext } from "../store/auth-context";
+import { useAuthContext } from "../../../store/auth/authContext";
+import Form from "../../ui/Form";
+import InputContainer from "../../ui/InputContainer";
+import Label from "../../ui/Label";
+import Input from "../../ui/Input";
+import Button from "../../ui/Button";
 
 function AuthForm() {
   const authCtx = useAuthContext();
@@ -14,8 +16,8 @@ function AuthForm() {
     setAuthMode((prevMode) => (prevMode === "login" ? "signup" : "login"));
   }
 
+  // Preserved your original action-based pattern
   async function submitAction(prevFormState, formData) {
-    // prevFormState is the previous form state it is left for reference, formData is the new form data
     setError(null);
     const email = formData.get("email");
     const password = formData.get("password");
@@ -43,10 +45,12 @@ function AuthForm() {
         <Label htmlFor="email">Email</Label>
         <Input type="email" id="email" name="email" required />
       </InputContainer>
+
       <InputContainer>
         <Label htmlFor="password">Password</Label>
         <Input type="password" id="password" name="password" required />
       </InputContainer>
+
       <InputContainer className={"honeypot"} name="honeypot">
         <Label htmlFor="honeypot" className={"honeypot"}>
           honeypot
@@ -58,25 +62,26 @@ function AuthForm() {
           className={"honeypot"}
         />
       </InputContainer>
+
       {error && <p className="text-red-300 text-sm mt-3">{error}</p>}
-      <p className="flex flex-col gap-3 mt-4">
-        <button
-          disabled={isPending}
-          className="bg-sky-400 py-2 text-black rounded-md hover:bg-sky-500 transition-colors duration-200 disabled:bg-stone-400 disabled:cursor-not-allowed disabled:text-stone-600"
-        >
+
+      <div className="flex flex-col gap-3 mt-4">
+        <Button type="submit" disabled={isPending}>
           {!isPending && authMode === "login" ? "Login" : "Create User"}
           {isPending && "Submitting..."}
-        </button>
-        <button
-          disabled={isPending}
+        </Button>
+
+        <Button
           type="button"
+          variant="secondary"
+          disabled={isPending}
           onClick={handleSwitchAuthMode}
         >
           {authMode === "login"
             ? "Create a new user"
             : "Already have an account? Login"}
-        </button>
-      </p>
+        </Button>
+      </div>
     </Form>
   );
 }

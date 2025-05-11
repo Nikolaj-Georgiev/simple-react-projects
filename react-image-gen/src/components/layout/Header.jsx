@@ -1,19 +1,19 @@
-import { useAuthContext } from "../store/auth-context";
+import { useAuthContext } from "../../store/auth/authContext";
+import Button from "../ui/Button";
 
 function Header() {
   const { token, logout } = useAuthContext();
+
   return (
     <header className="text-center text-stone-50">
       <h1 className="font-bold text-3xl font-mono">
         Reactlicate image generator
       </h1>
+
       {token && (
-        <button
-          className="mt-2 text-stone-200  hover:text-stone-400 transition-colors duration-200"
-          onClick={logout}
-        >
+        <Button variant="secondary" className="mt-2" onClick={logout}>
           Logout
-        </button>
+        </Button>
       )}
     </header>
   );
