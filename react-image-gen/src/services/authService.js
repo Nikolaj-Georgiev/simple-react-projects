@@ -58,10 +58,17 @@ export const authService = {
 
   async _handleAuthRequest(endpoint, email, password) {
     try {
-      return await fetchWrapper(endpoint, {
+      const { data } = await fetchWrapper(endpoint, {
         method: "POST",
         body: JSON.stringify({ email, password }),
       });
+
+      if (!data.token) {
+        throw new Error("No token received from server");
+      }
+
+      this.saveToken(data.token);
+      return data;
     } catch (error) {
       this.clearToken();
       throw error;

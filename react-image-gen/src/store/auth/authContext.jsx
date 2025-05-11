@@ -25,7 +25,6 @@ export function AuthContextProvider({ children }) {
     try {
       const data = await authService.signup(email, password);
       setToken(data.token);
-      authService.saveToken(data.token);
       return data;
     } catch (error) {
       throw error;
@@ -36,7 +35,6 @@ export function AuthContextProvider({ children }) {
     try {
       const data = await authService.login(email, password);
       setToken(data.token);
-      authService.saveToken(data.token);
       return data;
     } catch (error) {
       throw error;
@@ -55,7 +53,5 @@ export function AuthContextProvider({ children }) {
     logout,
   };
 
-  return (
-    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext value={contextValue}>{children}</AuthContext>;
 }
