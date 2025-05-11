@@ -38,7 +38,7 @@ function ImageGeneration() {
                 max="100"
                 step="1.0"
                 defaultValue="80"
-                className="flex flex-wrap gap-5 p-[0.6rem] rounded-sm w-[4rem] bg-stone-800"
+                className="flex flex-wrap gap-5 p-[0.6rem] rounded-sm w-[4rem] bg-stone-800  text-stone-400"
               />
             </InputContainer>
 
@@ -73,7 +73,10 @@ function ImageGeneration() {
         </div>
 
         <div className="flex justify-end">
-          <Button disabled={isPending || hasReachedLimit}>
+          <Button
+            disabled={isPending || hasReachedLimit}
+            className={"text-stone-50"}
+          >
             {isPending ? "Generating..." : "Generate"}
             {hasReachedLimit && !isPending ? " (Limit reached)" : ""}
           </Button>
