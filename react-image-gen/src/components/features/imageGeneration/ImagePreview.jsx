@@ -35,8 +35,8 @@ function ImagePreview({ formState }) {
         <>
           <img
             src={formState.imageUrl}
-            alt={formState.prompt}
-            className="h-[25rem] shadow-2xl rounded-md"
+            alt={formState.prompt || "Generated image"}
+            className="max-h-[25rem] w-auto md:max-w-full object-contain shadow-2xl rounded-md"
           />
           <Button
             onClick={downloadImage}
