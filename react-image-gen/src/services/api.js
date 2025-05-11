@@ -31,7 +31,7 @@ export const fetchWrapper = async (endpoint, options = {}) => {
     }
 
     return response.headers.get("content-type")?.includes("image")
-      ? { data: response.blob(), remainingCount }
+      ? { data: await response.blob(), remainingCount }
       : { data: await response.json(), remainingCount };
   } catch (error) {
     console.error(`API Error ${endpoint}:`, error);

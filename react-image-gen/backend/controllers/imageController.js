@@ -1,4 +1,5 @@
 import { generateImage } from "../services/imageService.js";
+import db from "../config/db.js";
 
 export const createImage = async (req, res, next) => {
   try {
