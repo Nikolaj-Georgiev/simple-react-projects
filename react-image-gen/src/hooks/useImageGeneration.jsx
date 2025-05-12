@@ -20,7 +20,7 @@ export function useImageGeneration() {
 
         if (response.ok) {
           const data = await response.json();
-          setRemainingImages(+data.remainingCount);
+          setRemainingImages(data.remainingCount);
         }
       } catch (error) {
         console.error("Failed to fetch remaining images count", error);
@@ -30,7 +30,7 @@ export function useImageGeneration() {
     if (token) {
       fetchRemainingCount();
     }
-  }, [token]);
+  }, [token, remainingImages]);
 
   async function submitAction(_, formData) {
     const prompt = formData.get("prompt");
@@ -51,9 +51,7 @@ export function useImageGeneration() {
         token
       );
 
-      if (remainingCount !== null) {
-        setRemainingImages(remainingCount);
-      }
+      setRemainingImages(remainingCount);
 
       return {
         result: "success",
