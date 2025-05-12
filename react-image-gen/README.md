@@ -1,12 +1,103 @@
-# React + Vite
+# Reactlicate Image Gen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Generate AI-powered images with Replicate!  
+This is a full-stack app built with React (frontend), Express (backend), and SQLite (database).  
+Each user can register, log in, and generate up to 5 images.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖼️ Features
 
-## Expanding the ESLint configuration
+- User registration and login
+- Image generation via Replicate API
+- Limit of 5 images per user
+- Preview and download generated images
+- Modern, responsive UI with TailwindCSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React 19, Vite, TailwindCSS
+- **Backend:** Node.js, Express, better-sqlite3
+- **Database:** SQLite3 (file-based)
+- **AI:** Replicate API
+
+---
+
+## 🚀 Getting Started Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/reactlicate-image-gen.git
+cd reactlicate-image-gen
+```
+
+### 2. Install dependencies
+
+#### Frontend
+
+```bash
+cd frontend
+npm install
+```
+
+#### Backend
+
+```bash
+cd ../backend
+npm install
+```
+
+### 3. Configure environment variables
+
+#### Backend (`backend/.env`):
+
+```env
+REPLICATE_API_TOKEN=your_replicate_api_token
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
+
+#### Frontend (`frontend/.env`):
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+### 4. Start the applications
+
+#### Backend
+
+```bash
+cd backend
+npm run dev
+```
+
+#### Frontend
+
+```bash
+npm run dev
+```
+
+---
+
+## ⚠️ Limitations
+
+- Each user can generate up to 5 images.
+- The database is not persistent in free cloud deployments (e.g., Render free tier).
+- Replicate API usage is subject to your account limits.
+
+---
+
+## 📝 License
+
+MIT
+
+---
+
+## 🙋‍♂️ Contact
+
+For questions or suggestions:  
+georgiev.nikolaj@gmail.com
