@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://api.138.199.223.210.nip.io";
 
 export const fetchWrapper = async (endpoint, options = {}) => {
   const url = `${API_BASE_URL}${endpoint}`;

@@ -10,7 +10,7 @@ export function useImageGeneration() {
     async function fetchRemainingCount() {
       try {
         const response = await fetch(
-          "http://localhost:5000/images/remaining-count",
+          "https://api.138.199.223.210.nip.io/images/remaining-count",
           {
             headers: {
               Authorization: `Bearer ${token}`,
