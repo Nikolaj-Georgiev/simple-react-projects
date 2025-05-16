@@ -51,7 +51,7 @@ A facts-sharing app implemented using React, designed to allow users to share in
   - Responsive design for desktop and mobile compatibility
 - **Technologies Used**: React, CSS, Vite, Supabase
 - **[Live Demo](https://facts-gnikolay.netlify.app/)**
-  
+
 ### 5. [WP site clone](./wp-site-clone/README.md)
 
 Modern single-page application (SPA) clone of the real-world WP made website, developed using **React**, **Chakra UI**, and **Vite**. This project showcases a responsive, accessible design, incorporating reusable components, CSS styling, and features to create a user-friendly interface similar to the original website.
@@ -65,7 +65,19 @@ Modern single-page application (SPA) clone of the real-world WP made website, de
 - **Technologies Used**: React, CSS, JavaScript (ES6), Vite, Chakra UI
 - **[Live Demo](https://clonetroll.netlify.app/)**
 
+### 6. [Reactlicate Image Gen](./react-image-gen/README.md)
 
+A full-stack AI-powered image generation app where users can register, log in, and generate up to 5 images using the Replicate API (Flux 1.1 Pro model). The backend is hosted on a Hetzner server (Ubuntu) with nginx as a reverse proxy and PM2 for process management, utilizing a [nip.io](https://nip.io/) subdomain for SSL via Let's Encrypt. The frontend is deployed on Netlify.
+
+- **Features**:
+  - User registration and JWT authentication
+  - Honeypot logic to prevent bot attacks on forms
+  - AI image generation via Replicate API (Flux 1.1 Pro)
+  - Limit of 5 images per user
+  - Preview and download generated images
+  - Modern, responsive UI with TailwindCSS
+- **Technologies Used**: React 19, Vite, TailwindCSS, Node.js, Express, better-sqlite3, SQLite3, Replicate API
+- **[Live Demo](https://reaclicate-image-gen.netlify.app/)**
 
 ## Development Instructions
 
