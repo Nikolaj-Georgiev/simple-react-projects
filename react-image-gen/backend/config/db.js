@@ -1,8 +1,8 @@
-import sqldb from "better-sqlite3";
+import sqldb from 'better-sqlite3';
 
-const db = sqldb("app.db");
+const db = sqldb('/var/db/app.db');
 
-db.pragma("journal_mode = WAL");
+db.pragma('journal_mode = WAL');
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users ( 
@@ -19,7 +19,7 @@ try {
   console.log("Column 'image_count' added to 'users' table.");
 } catch (error) {
   // This error typically means the column already exists, which is fine.
-  if (error.message.includes("duplicate column name")) {
+  if (error.message.includes('duplicate column name')) {
     console.log("'image_count' column already exists in 'users' table.");
   } else {
     // For any other error, log it, as it might be a different issue.
