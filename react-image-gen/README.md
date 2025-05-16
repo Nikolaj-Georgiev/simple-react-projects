@@ -34,6 +34,15 @@ If you want to use this code, [sign up at Replicate](https://replicate.com/) and
 
 ---
 
+## 🌍 Deployment
+
+- **Backend:** Hosted on a Hetzner server (Ubuntu) using nginx as a reverse proxy and PM2 for process management. The backend uses a [nip.io](https://nip.io/) subdomain to enable SSL certificates via Let's Encrypt without purchasing a custom domain.
+- **Frontend:** Deployed on [Netlify](https://reaclicate-image-gen.netlify.app/).
+
+[Live demo → https://reaclicate-image-gen.netlify.app/](https://reaclicate-image-gen.netlify.app/)
+
+---
+
 ## 🚀 Getting Started Locally
 
 ### 1. Clone the repository
@@ -48,6 +57,7 @@ cd react-image-gen
 #### Frontend
 
 ```bash
+cd /frontend
 npm install
 ```
 
