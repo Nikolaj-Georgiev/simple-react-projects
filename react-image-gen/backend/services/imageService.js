@@ -1,5 +1,5 @@
-import Replicate from "replicate";
-import config from "../config/env.js";
+import Replicate from 'replicate';
+import config from '../config/env.js';
 
 const replicate = new Replicate({
   auth: config.replicateApiToken,
@@ -8,14 +8,14 @@ const replicate = new Replicate({
 export const generateImage = async (prompt, options) => {
   const input = {
     prompt,
-    aspect_ratio: options.aspect_ratio || "1:1",
-    output_format: options.format || "webp",
+    aspect_ratio: options.aspect_ratio || '1:1',
+    output_format: options.format || 'webp',
     output_quality: +options.quality || 80,
-    safety_tolerance: 2,
+    safety_tolerance: 6,
     prompt_upsampling: true,
   };
 
-  const output = await replicate.run("black-forest-labs/flux-1.1-pro", {
+  const output = await replicate.run('black-forest-labs/flux-1.1-pro', {
     input,
   });
 
